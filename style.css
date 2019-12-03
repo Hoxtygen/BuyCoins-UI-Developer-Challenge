@@ -1,0 +1,102 @@
+body {
+    background-color: rgb(220,220,220);
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hide     {
+      display: none;
+  }
+
+  .show     {
+      display: inline-block;
+  }
+
+main   {
+    border: 1px solid blue;
+    margin: 100px auto;
+    width: 700px;
+    position: relative;
+}
+
+table   {
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid maroon;
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+  } 
+
+  table thead th  {
+    font-weight: 600;
+    background: #222;
+    color: #fff;
+  }
+
+  table thead th, table tbody td    {
+    padding: .8rem;
+    font-size: 1rem
+  }
+
+  table tbody td    {
+    color: #222;
+    vertical-align: middle;
+  }
+
+  table tbody tr:not(:last-child) { 
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;  
+  }
+
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  @media screen and (max-width: 600px) {
+    table thead { display: none; }
+    table tbody td { 
+      display: block;
+      padding: .6rem; 
+    }
+    table tbody tr td:first-child { 
+      background: #666; color: #fff; 
+    }
+      table tbody td:before { 
+      content: attr(data-th); 
+      font-weight: bold;
+      display: inline-block;
+      width: 6rem;  
+    }
+  }
+
+  .button-container     {
+      border: 1px solid red;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      align-items: center;
+  }
+
+  button    {
+      outline: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+  }
+
+  .button-container button:focus   {
+      border: 1px solid orange;
+  }
+
+  .button-container #next  {
+      position: absolute;
+      right: 10px;
+  }
