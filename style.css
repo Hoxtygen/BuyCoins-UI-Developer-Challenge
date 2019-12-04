@@ -1,102 +1,126 @@
-body {
-    background-color: rgb(220,220,220);
-    font-size: 15px;
-    line-height: 1.4;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-    padding: 0;
-    margin: 0;
-  }
-
-  .hide     {
-      display: none;
-  }
-
-  .show     {
-      display: inline-block;
-  }
-
-main   {
-    border: 1px solid blue;
-    margin: 100px auto;
-    width: 700px;
-    position: relative;
+* {
+  box-sizing: border-box;
 }
 
-table   {
-    border-collapse: collapse;
-    background: #fff;
-    border: 1px solid maroon;
-    text-align: left;
-    width: 100%;
-    padding: 20px;
-  } 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  table thead th  {
-    font-weight: 600;
-    background: #222;
-    color: #fff;
-  }
+body {
+  font-size: 15px;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: hsl(0, 0%, 86%);
+}
 
-  table thead th, table tbody td    {
-    padding: .8rem;
-    font-size: 1rem
-  }
+.hide {
+  display: none;
+}
 
-  table tbody td    {
-    color: #222;
-    vertical-align: middle;
-  }
+.show {
+  display: inline-block;
+}
 
-  table tbody tr:not(:last-child) { 
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;  
-  }
+main {
+  width: 600px;
+  margin: 100px auto;
+  box-shadow: 3px 2px 5px -1px rgba(0, 0, 0, 0.58);
+  position: relative;
+}
 
-  tr:nth-child(even) {
-    background-color: #ddd;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 1em;
+  border-radius: 5px 5px 0 0;
+  background: hsl(0, 0%, 100%);
+  text-align: left;
+}
 
-  th, td {
-    border-bottom: 1px solid #ddd;
-  }
+table th,
+table td {
+  padding: 10px;
+}
 
-  @media screen and (max-width: 600px) {
-    table thead { display: none; }
-    table tbody td { 
-      display: block;
-      padding: .6rem; 
+table th {
+  font-weight: 600;
+  background-color: #fff;
+}
+
+table tr:nth-child(odd) {
+  background: hsl(0, 0%, 94%);
+}
+
+.button-container     {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    min-height: 40px;
+}
+
+
+
+.button-container button {
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.8em;
+  font-weight: 600;
+  border: none;
+}
+
+button:focus {
+  border: 1px solid hsl(39, 56%, 40%);
+}
+
+.button-container button#next   {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+@media (max-width: 610px) {
+    main    {
+        width: 100%;
+        min-width: 300px;
     }
-    table tbody tr td:first-child { 
-      background: #666; color: #fff; 
+
+    table th    {
+        display: none;
     }
-      table tbody td:before { 
-      content: attr(data-th); 
-      font-weight: bold;
-      display: inline-block;
-      width: 6rem;  
+
+    table tr    {
+        display: flex;
+        flex-wrap: wrap;
     }
-  }
 
-  .button-container     {
-      border: 1px solid red;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      align-items: center;
-  }
+    table td {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+      }
 
-  button    {
-      outline: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-  }
-
-  .button-container button:focus   {
-      border: 1px solid orange;
-  }
-
-  .button-container #next  {
-      position: absolute;
-      right: 10px;
-  }
+      td:nth-child(1)::before {
+        content: '💰 Coin';
+        font-weight: 600;
+      }
+      td:nth-child(2)::before {
+        content: '📄 Code';
+        font-weight: 600;
+      }
+      td:nth-child(3)::before {
+        content: '🤑 Price';
+        font-weight: 600;
+      }
+      td:nth-child(4)::before {
+        content: '📉 Total Supply';
+        font-weight: 600;
+      }
+}
